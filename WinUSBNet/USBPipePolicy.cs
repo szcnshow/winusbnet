@@ -131,7 +131,7 @@ namespace MadWizard.WinUSBNet
             set
             {
                 if (value < 0)
-                    throw new ArgumentOutOfRangeException(nameof(value), "Pipe transfer timeout cannot be negative.");
+                    throw new ArgumentOutOfRangeException("value", "Pipe transfer timeout cannot be negative.");
                 _device.InternalDevice.SetPipePolicy(_interfaceIndex, _pipeID, API.POLICY_TYPE.PIPE_TRANSFER_TIMEOUT, (uint)value);
             }
         }
