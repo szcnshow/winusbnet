@@ -98,6 +98,17 @@ namespace MadWizard.WinUSBNet
         }
 
         /// <summary>
+        /// True if is Interrupt endpoint
+        /// </summary>
+        public bool IsInterrupt
+        {
+            get
+            {
+                return _pipeInfo.PipeType == API.USBD_PIPE_TYPE.UsbdPipeTypeInterrupt;
+            }
+        }
+
+        /// <summary>
         /// Reads data from the pipe into a buffer.
         /// </summary>
         /// <param name="buffer">The buffer to read data into. The maximum number of bytes that will be read is specified by the length of the buffer.</param>
